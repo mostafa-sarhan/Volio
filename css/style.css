@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+* ul {
+  list-style: none;
+  text-decoration: none;
+}
+* button {
+  cursor: pointer;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.nav {
+  padding-top: 10px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.nav .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slide-top 1s;
+}
+.nav .navbar .logo {
+  width: 80px;
+}
+.nav .navbar .logo img {
+  width: 100%;
+}
+.nav .navbar .list ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav .navbar .list ul li {
+  margin: auto 20px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 10px;
+}
+.nav .navbar .list ul li::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+.nav .navbar .list ul li:hover::before {
+  width: 100%;
+}
+/* Start Toggle menu */
+.nav .navbar .icon {
+  position: relative;
+  display: none;
+}
+.nav .navbar .icon i {
+  font-size: 25px;
+  color: #fff;
+  margin-top: -8px;
+}
+.nav .navbar .icon .toggle-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: -20px;
+  padding: 20px;
+  opacity: 0;
+  width: 350px;
+  background-color: #000;
+  transition: all 0.5s;
+}
+.nav .navbar .icon:hover .toggle-menu {
+    z-index: 9999;
+  display: block;
+  opacity: 1;
+}
+.nav .navbar .icon .toggle-menu ul li {
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+  border-bottom: 0;
+  transition: all 0.5s;
+}
+.nav .navbar .icon .toggle-menu ul li:hover {
+  border-bottom: 2px solid #fff;
+}
+
+/* Start Section Home */
+
+#home {
+  height: 100vh;
+  background-color: red;
+  background-image: url(../photo/banner.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+}
+
+#home .container .box {
+  animation: slide-right 1.5s;
+}
+#home .box h1,
+#home .box h2 {
+  font-size: 55px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+#home .box h2 {
+    position: relative;
+}
+#home .box h2::after {
+    position: absolute;
+    content: " ";
+    animation: write 10s infinite;
+    padding-left: 10px;
+}
+#home .box p {
+  width: 500px;
+  padding-top: 10px;
+  color: #ffffffa0;
+}
+#home .box button {
+  padding: 15px 25px;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+#home .box button:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* Start Media Query */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+  .nav .navbar .list {
+    display: none;
+  }
+  .nav .navbar .icon {
+    display: block;
+  }
+  #home {
+    background-position: 60% center;
+  }
+  #home .box h1,
+  #home .box h2 {
+    font-size: 40px;
+    padding-top: 10px;
+  }
+  #home .box p {
+    max-width: 250px;
+  }
+}
+
+/* Animated */
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-650px);
+    transform: translateX(-650px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes write {
+    3%{
+        content: " VO|";
+    }
+    6%{
+        content: " VOLI|";
+    }
+    9%{
+        content: " VOLIO |";
+    }
+    12%{
+        content: " VOLIO Ja|";
+    }
+    15%{
+        content: " VOLIO Jaso|";
+    }
+    18%{
+        content: " VOLIO Jason|";
+    }
+    21%{
+        content: " VOLIO Jason|";
+    }
+    24%{
+        content: " VOLIO Jas |";
+    }
+    27%{
+        content: " VOLIO J|";
+    }
+    30%{
+        content: " VOLIO|";
+    }
+    33%{
+        content: " VOL|";
+    }
+    36%{
+        content: " V|";
+    }
+    39%{
+        content: " |";
+    }
+    /* Start Designer */
+    42%{
+        content: " De|";
+    }
+    45%{
+        content: " Desi|";
+    }
+    48%{
+        content: " Design|";
+    }
+    51%{
+        content: " Designer|";
+    }
+    53%{
+        content: " Designer|";
+    }
+    56%{
+        content: " Design|";
+    }
+    59%{
+        content: " Desi|";
+    }
+    62%{
+        content: " De|";
+    }
+    65%{
+        content: " |";
+    }
+    /* Start Freelancer */
+    68%{
+        content: " Fr|";
+    }
+    71%{
+        content: " Free|";
+    }
+    74%{
+        content: " Freela|";
+    }
+    77%{
+        content: " Freelanc|";
+    }
+    80%{
+        content: " Freelancer|";
+    }
+    83%{
+        content: " Freelancer|";
+    }
+    86%{
+        content: " Freelanc|";
+    }
+    89%{
+        content: " Freela|";
+    }
+    95%{
+        content: " Free|";
+    }
+    98%{
+        content: " Fr|";
+    }
+    100%{
+        content: " |";
+    }
+}
+
+
+/* I Am Herry Jason Designer Freelancer  */
